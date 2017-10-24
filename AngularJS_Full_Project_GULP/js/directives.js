@@ -1,31 +1,31 @@
 angular
-.module('app')
-.directive('a', preventClickDirective)
-.directive('a', bootstrapCollapseDirective)
-.directive('a', navigationDirective)
-.directive('button', layoutToggleDirective)
-.directive('a', layoutToggleDirective)
-.directive('button', collapseMenuTogglerDirective)
-.directive('div', bootstrapCarouselDirective)
-.directive('toggle', bootstrapTooltipsPopoversDirective)
-.directive('tab', bootstrapTabsDirective)
-.directive('button', cardCollapseDirective)
+    .module('app')
+    .directive('a', preventClickDirective)
+    .directive('a', bootstrapCollapseDirective)
+    .directive('a', navigationDirective)
+    .directive('button', layoutToggleDirective)
+    .directive('a', layoutToggleDirective)
+    .directive('button', collapseMenuTogglerDirective)
+    .directive('div', bootstrapCarouselDirective)
+    .directive('toggle', bootstrapTooltipsPopoversDirective)
+    .directive('tab', bootstrapTabsDirective)
+    .directive('button', cardCollapseDirective)
 
 //Prevent click if href="#"
 function preventClickDirective() {
-  var directive = {
-    restrict: 'E',
-    link: link
-  }
-  return directive;
-
-  function link(scope, element, attrs) {
-    if (attrs.href === '#'){
-      element.on('click', function(event){
-        event.preventDefault();
-      });
+    var directive = {
+        restrict: 'E',
+        link: link
     }
-  }
+    return directive;
+
+    function link(scope, element, attrs) {
+        if (attrs.href === '#'){
+            element.on('click', function(event){
+                event.preventDefault();
+            });
+        }
+    }
 }
 
 //Bootstrap Collapse

@@ -12,23 +12,23 @@ var paths = gulp.paths;
 var vendors = './scss/vendors/';
 
 gulp.task('compile-vendors:clean', function () {
-  return del([
-    './vendors/css/**'
-  ]);
+    return del([
+        './vendors/css/**'
+    ]);
 });
 
 gulp.task('compile-vendors:sass', function () {
-  return gulp.src('./scss/vendors/**/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(autoprefixer())
-  .pipe(rename({dirname: ''}))
-  .pipe(gulp.dest('./vendors/css/'))
-  .pipe(cssmin())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(rename({dirname: ''}))
-  .pipe(gulp.dest('./vendors/css/'));
+    return gulp.src('./scss/vendors/**/*.scss')
+            .pipe(sass().on('error', sass.logError))
+            .pipe(autoprefixer())
+            .pipe(rename({dirname: ''}))
+            .pipe(gulp.dest('./vendors/css/'))
+            .pipe(cssmin())
+            .pipe(rename({suffix: '.min'}))
+            .pipe(rename({dirname: ''}))
+            .pipe(gulp.dest('./vendors/css/'));
 });
 
-gulp.task('compile-vendors', function(callback) {
-  runSequence('compile-vendors:clean', 'compile-vendors:sass', callback);
+gulp.task('compile-vendors', function (callback) {
+    runSequence('compile-vendors:clean', 'compile-vendors:sass', callback);
 });

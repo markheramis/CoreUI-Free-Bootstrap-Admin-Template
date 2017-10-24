@@ -33,7 +33,7 @@ var testContext = require.context('./unit', true, /\.spec\.(ts|js)$/);
  * loop and require those spec files here
  */
 function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
+    return requireContext.keys().map(requireContext);
 }
 
 // requires and returns all modules that match

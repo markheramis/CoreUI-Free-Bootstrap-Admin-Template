@@ -1,6 +1,6 @@
 {
-  "name": "FontAwesome",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./FontAwesome.js"
+    "name": "FontAwesome",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./FontAwesome.js"
 }

@@ -6,25 +6,26 @@ let logger = LogManager.getLogger('SimpleService');
 
 @inject(Endpoint.of('simple-api'))
 export class SimpleService {
-  resource = '';
+    resource = '';
 
-  constructor(apiEndpoint) {
-    this.apiEndpoint = apiEndpoint;
-  }
+    constructor(apiEndpoint) {
+        this.apiEndpoint = apiEndpoint;
+    }
 
-  simpleQuery(code, name, max, searchParentsOnly, searchString) {
-    var param = {max: max || 50};
-    param.code = code;
-    param.name = name;
+    simpleQuery(code, name, max, searchParentsOnly, searchString) {
+        var param = {max: max || 50};
+        param.code = code;
+        param.name = name;
 
-    param.searchString = searchString;
-    param.searchParentsOnly = searchParentsOnly;
+        param.searchString = searchString;
+        param.searchParentsOnly = searchParentsOnly;
 
-    logger.debug('Pärime simpleid parameetritega:', param);
-    return this.apiEndpoint.find(this.resource, param)
-      .then(response => response)
-      .catch(error => {
-        console.error('Error !', error);
-      });
-  };
+        logger.debug('Pärime simpleid parameetritega:', param);
+        return this.apiEndpoint.find(this.resource, param)
+                .then(response => response)
+                .catch(error => {
+                    console.error('Error !', error);
+                });
+    }
+    ;
 }
