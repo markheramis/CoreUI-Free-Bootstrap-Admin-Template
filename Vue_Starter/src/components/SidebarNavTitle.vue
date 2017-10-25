@@ -1,16 +1,16 @@
 <template>
-  <li class="nav-title">
-    {{name}}
-  </li>
+    <li class="nav-title">
+        {{name}}
+    </li>
 </template>
 
 <script>
-export default {
-  props: {
-    name: {
-      type: String,
-      default: ''
+    export default {
+        props: {
+            name: {
+                type: String,
+                default: ''
+            }
+        }
     }
-  }
-}
 </script>

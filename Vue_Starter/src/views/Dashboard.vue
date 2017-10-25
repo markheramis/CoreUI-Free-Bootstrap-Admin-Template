@@ -1,11 +1,11 @@
 <template>
-  <div class="animated fadeIn">
-    Hello World
-  </div>
+    <div class="animated fadeIn">
+        Hello World
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'dashboard'
-}
+    export default {
+        name: 'dashboard'
+    }
 </script>
